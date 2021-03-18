@@ -8,7 +8,7 @@
     - name: setup LAMP server
       yum: 
         name: [httpd, mysql, php]
-        state: present"
+        state: "present"
       command: systemctl status httpd
       register: result
 
