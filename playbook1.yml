@@ -7,7 +7,7 @@
   tasks:
     - name: setup LAMP server
       yum: 
-        name: [httpd, mysql, php]
+        name: httpd
         state: "present"
       command: systemctl status httpd
       register: result
