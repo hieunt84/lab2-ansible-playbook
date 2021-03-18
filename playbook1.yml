@@ -2,15 +2,15 @@
 #Play: Setup LAMP server
 - name: setup LAMP server
   hosts: centos
-  items:
-
   tasks:
-    - name: setup LAMP server
+
+    - 
+#      name: setup LAMP server
       yum: 
         name: httpd
-        state: "present"
-      command: systemctl status httpd
-      register: result
+ #       state: "present"
+ #     command: systemctl status httpd
+ #     register: result
 
     - name: show result tasks on screen 
       debug: var=result.stdout_lines
