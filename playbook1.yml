@@ -51,7 +51,7 @@
         #permanent: true
         #state: disabled
     - firewalld:
-        port: "{{ snmp_port }}"/udp
+        port: {{ snmp_port }}/udp
         permanent: true
         state: enabled
     #- firewalld:
