@@ -11,7 +11,7 @@
       vars:
         packages:
           - httpd
-          - mysql-server
+          - mariadb-server
           - php
       
     - name: Start web server
