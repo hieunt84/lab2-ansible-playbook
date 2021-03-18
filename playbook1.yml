@@ -18,14 +18,7 @@
       service:
         name: "{{ item }}"
         state: started
-      with_items:
-        - httpd
-        - mariadb
-
-    - name: Start web server
-      service:
-        name: "{{ item }}"
-        state: enabled
+        enabled: yes
       with_items:
         - httpd
         - mariadb
