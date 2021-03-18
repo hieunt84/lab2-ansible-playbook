@@ -16,7 +16,7 @@
       
     - name: Start web server
       service:
-        name: {{ item }}
+        name: "{{ item }}"
         state: started
       with_items:
         - httpd
