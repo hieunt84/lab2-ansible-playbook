@@ -1,7 +1,7 @@
 ---
-#Play: Setup LAMP server
+#Play: SETUP LAMP SERVER
 - 
-  name: setup LAMP server
+  name: PLAY1 - SETUP LAMP SERVER
   hosts: centos
   tasks:
 
@@ -32,9 +32,9 @@
     - name: show result tasks on screen 
       debug: var=result.stdout_lines
 
-#Play2: Set firewall configurations
+#PLAY2 - SET FIREALL CONFIGURATION
 -
-  name: Set firewall configurations
+  name: PLAY2 - SET FIREALL CONFIGURATION
   hosts: centos
   vars:
     #http_port: 8081
