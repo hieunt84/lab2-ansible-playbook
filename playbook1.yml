@@ -6,13 +6,18 @@
 
     - name: setup LAMP server
       yum: 
-        name: httpd
+        name: {{packages}}
         state: present
-      register: result
+      vars:
+        packages:
+          - httpd
+          - mysql
+          - php
+      
     
     - name : check status
-      command: echo " dlkjfl;ksf"
-
+      command: systemctl status httpd
+      register: result
 
     - name: show result tasks on screen 
       debug: var=result.stdout_lines
