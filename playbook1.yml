@@ -51,7 +51,7 @@
         #permanent: true
         #state: disabled
     - firewalld:
-        port: 8081/tcp
+        port: 8080/tcp
         permanent: true
         state: enabled
     #- firewalld:
