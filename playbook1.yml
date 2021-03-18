@@ -25,7 +25,7 @@
           - php
 
     - name : check status
-      command: systemctl status mysqld
+      command: systemctl status mariadb
       register: result
 
     - name: show result tasks on screen 
