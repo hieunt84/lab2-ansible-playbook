@@ -25,7 +25,7 @@
           - php
 
     - name : check status
-      command: systemctl status httpd
+      command: systemctl status mysqld
       register: result
 
     - name: show result tasks on screen 
