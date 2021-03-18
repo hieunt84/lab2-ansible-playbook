@@ -4,12 +4,11 @@
   hosts: centos
   tasks:
 
-    - 
-      name: setup LAMP server
+    - name: setup LAMP server
       yum: 
         name: httpd
         state: "present"
-      command: systemctl status httpd
+      command: echo " klsdjflsdjflk" 
       register: result
 
     - name: show result tasks on screen 
