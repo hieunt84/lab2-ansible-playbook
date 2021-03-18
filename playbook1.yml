@@ -10,7 +10,7 @@
         name: httpd
         state: "present"
       command: 
-        cmd: systemctl status httpd
+        cmd: echo "systemctl status httpd"
       register: result
 
     - name: show result tasks on screen 
