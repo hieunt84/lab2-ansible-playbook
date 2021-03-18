@@ -1,10 +1,11 @@
 ---
 #Play: Setup LAMP server
-- name: setup LAMP server
+- 
+  name: setup LAMP server
   hosts: centos
   tasks:
 
-    - name: setup LAMP server
+    - name: Setup LAMP server
       yum: 
         name: "{{ packages }}"
         state: present
@@ -14,7 +15,7 @@
           - mariadb-server
           - php
       
-    - name: Start web server
+    - name: Start and enabled services
       service:
         name: "{{ item }}"
         state: started
@@ -30,3 +31,30 @@
 
     - name: show result tasks on screen 
       debug: var=result.stdout_lines
+
+#Play2: Set firewall configurations
+-
+  name: Set firewall configurations
+  hosts: centos
+  vars:
+    #http_port: 8081
+    snmp_port: 160-161
+    #inter_ip_range: 192.0.2.0
+    
+  tasks:
+    - firewalld:
+        service: http
+        permanent: true
+        state: enabled
+    #- firewalld:
+        #port: "{{ http_port }}"/tcp
+        #permanent: true
+        #state: disabled
+    - firewalld:
+        port: "{{ snmp_port }}"/udp
+        permanent: true
+        state: enabled
+    #- firewalld:
+        #source: "{{ inter_ip_range }}"/24
+        #zone: internal
+        #state: enabled
