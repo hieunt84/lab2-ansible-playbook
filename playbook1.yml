@@ -22,6 +22,14 @@
         - httpd
         - mariadb
 
+    - name: Start web server
+      service:
+        name: "{{ item }}"
+        state: enabled
+      with_items:
+        - httpd
+        - mariadb
+
     - name : check status
       command: curl http://localhost
       register: result
