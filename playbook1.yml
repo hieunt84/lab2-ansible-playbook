@@ -37,7 +37,7 @@
   name: PLAY2 - SET FIREALL CONFIGURATION
   hosts: centos
   vars:
-    #http_port: 8081
+    http_port: 8081
     #snmp_port: 160-161
     #inter_ip_range: 192.0.2.0
     
@@ -51,7 +51,7 @@
         #permanent: true
         #state: disabled
     - firewalld:
-        port: 443/tcp
+        port: "{{ http_port }}/tcp"
         permanent: true
         state: enabled
     #- firewalld:
