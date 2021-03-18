@@ -39,7 +39,6 @@
   vars:
     #http_port: 8081
     #snmp_port: 160-161
-    snmp_port: 160
     #inter_ip_range: 192.0.2.0
     
   tasks:
@@ -52,7 +51,7 @@
         #permanent: true
         #state: disabled
     - firewalld:
-        port: "{{ snmp_port }}"/udp
+        port: 443/tcp
         permanent: true
         state: enabled
     #- firewalld:
