@@ -1,0 +1,15 @@
+---
+#Play: Setup LAMP server
+- name: setup LAMP server
+  hosts: centos
+  tasks:
+    - name: setup LAMP server
+      yum: name="{{item}}" state="present"
+      with_items:
+        - httpd
+        - mysql
+        - php
+      register: result
+
+    - name: show result tasks on screen 
+      debug: var=result.stdout_lines
