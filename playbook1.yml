@@ -23,7 +23,7 @@
         - mariadb
 
     - name : check status
-      command: systemctl status mariadb
+      command: curl http://localhost
       register: result
 
     - name: show result tasks on screen 
