@@ -16,12 +16,12 @@
       
     - name: Start web server
       service:
-        name: httpd
+        name: "{{ packages }}"
         state: started
       vars:
         packages:
           - httpd
-          - mysql
+          - mariadb
           - php
 
     - name : check status
