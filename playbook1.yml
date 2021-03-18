@@ -51,7 +51,7 @@
         #permanent: true
         #state: disabled
     - firewalld:
-        port: 8080/tcp
+        port: "{{ http_port }}/tcp"
         permanent: true
         state: enabled
     #- firewalld:
