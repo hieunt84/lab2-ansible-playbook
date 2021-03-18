@@ -7,9 +7,12 @@
     - name: setup LAMP server
       yum: 
         name: httpd
-        state: "present"
-      command: echo " klsdjflsdjflk" 
+        state: present
       register: result
+    
+    - name : check status
+      command: echo " dlkjfl;ksf"
+
 
     - name: show result tasks on screen 
       debug: var=result.stdout_lines
