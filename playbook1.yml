@@ -11,10 +11,19 @@
       vars:
         packages:
           - httpd
-          - mysql
+          - mysql-server
           - php
       
-    
+    - name: Start web server
+      service:
+        name: httpd
+        state: started
+      vars:
+        packages:
+          - httpd
+          - mysql
+          - php
+
     - name : check status
       command: systemctl status httpd
       register: result
