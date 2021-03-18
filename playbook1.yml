@@ -16,13 +16,11 @@
       
     - name: Start web server
       service:
-        name: {{ packages }}
+        name: {{ item }}
         state: started
-      vars:
-        packages:
-          - httpd
-          - mariadb
-          - php
+      with_items:
+        - httpd
+        - mariadb
 
     - name : check status
       command: systemctl status mariadb
