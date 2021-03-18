@@ -58,3 +58,10 @@
         #source: "{{ inter_ip_range }}"/24
         #zone: internal
         #state: enabled
+        
+    - name : check status
+      command: firewall-cmd --list-all 
+      register: result
+
+    - name: show result tasks on screen 
+      debug: var=result.stdout_lines
