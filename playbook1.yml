@@ -9,7 +9,7 @@
       yum: 
         name: httpd
         state: "present"
-#      command: echo "systemctl status httpd"
+      command: systemctl status httpd
       register: result
 
     - name: show result tasks on screen 
