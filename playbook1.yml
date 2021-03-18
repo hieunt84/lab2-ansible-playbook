@@ -16,7 +16,7 @@
       
     - name: Start web server
       service:
-        name: "{{ packages }}"
+        name: {{ packages }}
         state: started
       vars:
         packages:
